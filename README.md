@@ -3,7 +3,7 @@
 Este é um sistema de To-Do List desenvolvido como parte de um processo seletivo. O sistema permite a criação de múltiplas listas de tarefas, com a possibilidade de adicionar, editar e excluir itens em cada lista.
 
 ## Funcionalidades
-
+Os requisitos do sistemas podem ser verificados no seguinte documento: [Requisitos](https://docs.google.com/document/d/1tfS278ynzns3iPplM9BwIOekVXQgkaPvygiyJBQtocQ/edit?usp=sharing)
 - Criar várias listas de To-Do.
 - Adicionar vários itens a cada lista.
 - Marcar itens como concluídos ou excluí-los.
