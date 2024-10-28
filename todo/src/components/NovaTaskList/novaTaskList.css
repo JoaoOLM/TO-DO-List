@@ -1,0 +1,103 @@
+.novaTaskList .novaTaskListBtn button{
+    padding: 10px;
+    width: 100%;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.novaTaskList .button button:hover {
+    background-color: #dcdcdc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition:all 0.3s ease;
+}
+
+.novaTaskList form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilos para o texto do formulário */
+.novaTaskList .text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o título da nova tarefa */
+.novaTaskList .text h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.novaTaskList label{
+    margin-left: 10px;
+}
+
+/* Estilos para os inputs e labels */
+.novaTaskList input[type="text"],
+.novaTaskList input[type="date"],
+.novaTaskList input[type="time"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%; 
+}
+
+/* Estilos para o checkbox do lembrete */
+.novaTaskList input[type="checkbox"] {
+    margin-right: 10px; 
+}
+
+/* Estilos para a seção de lembrete */
+.novaTaskList .lembrete {
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a escolha de subgrupos */
+.novaTaskList .escolherSubgrupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.novaTaskList .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Estilos para o botão cancelar */
+.novaTaskList .cancelar {
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+/* Estilos para o botão confirmar */
+.novaTaskList .confirmar button{
+    padding: 10px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novaTaskList .confirmar button:hover{
+    background-color: #dcdcdc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition:all 0.3s ease;
+}

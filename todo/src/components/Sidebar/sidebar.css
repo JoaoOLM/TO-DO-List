@@ -1,0 +1,114 @@
+/* Estilização geral da sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #404040;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Estilo para a área de informações do usuário */
+.sidebar .user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .profile-pic img{
+  width: 50px;
+  height: 50px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar .user-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.sidebar .user-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Estilo para o campo de pesquisa */
+.sidebar .search-container {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.sidebar .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 32%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 20px;
+}
+
+/*Estilo para a linha de divisão */
+.sidebar .line {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px 0 40px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para as listas de tarefas */
+.sidebar .task-lists {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.sidebar .task-lists li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar .task-lists li:hover {
+    color: #cccccc;
+}
+
+.sidebar .task-lists li p {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.sidebar .task-lists li svg {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.sidebar .task-lists li:hover p,
+.sidebar .task-lists li:hover svg {
+    color: #cccccc;
+}
+
+
