@@ -7,20 +7,18 @@ function NovaTaskList({ addNewTaskList }) {
     const [showModal, setShowModal] = useState(false);
     const [listName, setListName] = useState("");
 
-    // Função para fechar o modal e limpar o campo de input
     const closeModal = () => {
-        setListName(""); // Limpa o campo de nome da lista
-        setShowModal(false); // Fecha o modal
+        setListName(""); 
+        setShowModal(false); 
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (listName.trim() === "") {
-            return; // Evita criar uma lista vazia
+            return; 
         }
-        // Chama a função para adicionar a nova lista de tarefas
         addNewTaskList(listName);
-        closeModal(); // Fecha o modal e limpa o campo após criar a lista
+        closeModal(); 
     };
 
     return (

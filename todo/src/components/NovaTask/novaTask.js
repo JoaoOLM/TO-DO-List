@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "../Modal/modal";
 import "./novaTask.css";
-import { MdCancel } from "react-icons/md";
+import { MdCancel, MdDelete } from "react-icons/md";
 
-function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
+function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected, deleteTask }) {
     const [showModal, setShowModal] = useState(false);
     const [text, setText] = useState("");
     const [date, setDate] = useState("");
@@ -11,7 +11,6 @@ function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
 
     // Efeito para preencher os campos se uma tarefa estiver sendo editada
     useEffect(() => {
-        console.log('1oooooo')
         if (taskToEdit) {
             setText(taskToEdit.text);
             setDate(taskToEdit.date);
@@ -19,7 +18,6 @@ function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
             setShowModal(true); 
         } else {
             clearFields();
-            setShowModal(false);
         }
     }, [taskToEdit]);
 
@@ -43,7 +41,7 @@ function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
         if (taskToEdit) {
             onEditTask(taskData); 
         } else {
-            onAddTask(taskData); // Adiciona a nova tarefa
+            onAddTask(taskData); 
         }
 
         clearFields();
@@ -51,12 +49,12 @@ function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
     };
 
     const openModal = () => {
-        clearFields(); // Limpa os campos antes de abrir o modal
+        clearFields(); 
         setShowModal(true);
     };
 
     const closeModal = () => {
-        clearFields(); // Limpa os campos ao fechar o modal
+        clearFields(); 
         setShowModal(false);
     };
 
@@ -91,6 +89,12 @@ function NovaTask({ onAddTask, taskToEdit, onEditTask, changeSelected }) {
                     />
                     <button className="confirmar" type="submit">Salvar</button>
                     <MdCancel size={40} onClick={closeModal} />
+                    {taskToEdit && 
+                        <MdDelete size={40} onClick={() => {
+                            deleteTask(taskToEdit.id); 
+                            closeModal(); 
+                        }}/>
+                    }
                 </form>
             </Modal>
         </div>

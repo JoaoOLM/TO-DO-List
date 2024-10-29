@@ -6,7 +6,7 @@ import TodoList from "./pages/todoList.js";
 function App() {
   const [taskLists, setTaskLists] = useState([]);
   const [activeList, setActiveList] = useState(null);
-  const [lastTaskId, setLastTaskId] = useState(0); // Controle de ID
+  const [lastTaskId, setLastTaskId] = useState(0);
 
   const loadExampleLists = () => {
     let initialId = 1;
@@ -135,9 +135,8 @@ function App() {
   };
 
   const addTaskToList = (task) => {
-    // Se for uma nova tarefa, gere um novo ID
     const newTask = {
-      id: task.id || lastTaskId + 1, // Gere o ID se for uma nova tarefa
+      id: task.id || lastTaskId + 1,
       text: task.text,
       date: task.date,
       time: task.time,
@@ -146,25 +145,22 @@ function App() {
 
     const updatedTaskLists = taskLists.map((list) => {
       if (list.name === activeList.name) {
-        // Verifica se a tarefa já existe (caso de edição)
         const existingTaskIndex = list.tasks.findIndex(
           (t) => t.id === newTask.id
         );
         if (existingTaskIndex !== -1) {
-          // Se já existe, atualize a tarefa
           const updatedTasks = list.tasks.map((task) =>
             task.id === newTask.id ? newTask : task
           );
           return { ...list, tasks: updatedTasks };
         } else {
-          // Se não existe, adicione uma nova tarefa
           return { ...list, tasks: [...list.tasks, newTask] };
         }
       }
       return list;
     });
 
-    setLastTaskId(newTask.id); // Atualiza o ID após a adição
+    setLastTaskId(newTask.id);
     updateTaskLists(updatedTaskLists);
     setActiveList(
       updatedTaskLists.find((list) => list.name === activeList.name)

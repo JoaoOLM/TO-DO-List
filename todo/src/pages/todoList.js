@@ -8,35 +8,33 @@ const TodoList = ({ taskList, onAddTask, onToggleTask, editTask }) => {
   
 
   const handleEditTask = (task) => {
-    console.log("Editando tarefa:", task); // Log para verificar se a tarefa está correta
     setSelectedTask(task);
   };
 
   const handleSaveTask = (task) => {
-    console.log('aaaaaaa')
     if (!task.text || task.text.trim() === "") {
       alert("A tarefa não pode estar vazia.");
       return;
     }
    
-
-    console.log("Selected task:", selectedTask); // Adicionando log
-
     if (selectedTask) {
-      // Verifica se há uma tarefa selecionada
-      editTask({ ...selectedTask, ...task }); // Atualiza a tarefa existente com os dados editados
+      editTask({ ...selectedTask, ...task }); 
     } else {
-      onAddTask(task); // Adiciona uma nova tarefa
+      onAddTask(task); 
     }
 
-    setSelectedTask(null); // Limpa a seleção após salvar
+    setSelectedTask(null); 
   };
+
+  // Filtrando tarefas
+  const incompleteTasks = taskList.tasks.filter(task => !task.completed);
+  const completedTasks = taskList.tasks.filter(task => task.completed);
 
   return (
     <div className="todo-list">
       <h1>{taskList.name}</h1>
       <div className="tasks">
-        {taskList.tasks.map((task) => (
+        {[...incompleteTasks, ...completedTasks].map((task) => (
           <TodoItem
             key={task.id}
             tarefa={task}
